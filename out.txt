@@ -1,5 +1,5 @@
-Choose 1 for file, 2 for text: Found 5 words.
-Choose 1 for file, 2 for text: Found 9 words.
-Choose 1 for file, 2 for text: EmptyFileException: file1.txt was empty
+Found 5 words.
+Found 9 words.
+EmptyFileException: file1.txt was empty
 TooSmallText: Only found 0 words.
-Choose 1 for file, 2 for text: TooSmallText: Only found 2 words.
+TooSmallText: Only found 2 words.

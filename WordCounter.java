@@ -11,8 +11,8 @@ public class WordCounter {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int choice = 0;
+
         while (choice != 1 && choice != 2) {
-            System.out.print("Choose 1 for file, 2 for text: ");
             if (sc.hasNextInt()) {
                 choice = sc.nextInt();
             } else {
@@ -24,20 +24,17 @@ public class WordCounter {
         String stopword = (args.length >= 2) ? args[1] : null;
 
         if (choice == 1) {
-            if (args.length >= 1) {
-                try {
-                    text = processFile(args[0]);
-                } catch (EmptyFileException efe) {
-                    System.out.println(efe.toString());
-                    text = new StringBuffer("");
-                }
-            } else {
+            try {
+                text = processFile(args.length >= 1 ? args[0] : "");
+            } catch (EmptyFileException efe) {
+                System.out.println(efe.toString());
                 text = new StringBuffer("");
             }
         } else { 
-            System.out.print("Enter text: ");
-            sc.nextLine(); 
-            text.append(sc.nextLine());
+            sc.nextLine();                 
+            if (sc.hasNextLine()) {
+                text.append(sc.nextLine());
+            }
         }
 
         try {
